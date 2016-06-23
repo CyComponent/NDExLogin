@@ -9,6 +9,10 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme'
 export default class CyComponent extends React.Component {
 
   static defaultProps = {
+    style: {
+      height: '100%',
+      width: '100%'
+    },
     onSubmit: () => {}
   }
 
@@ -39,18 +43,17 @@ export default class CyComponent extends React.Component {
   }
 
   login = () => {
-      console.log("Login was")
-      console.log(this.state.serverName),
-      console.log(this.state.serverAddress),
-      console.log(this.state.user),
-      console.log(this.state.pass),
+      this.props.serverActions.setServer(this.state.serverName, this.state.serverAddress),
+      if (this.state.user != "" && this.state.pass != "") {
+        this.props.serverActions.login(this.state.user, this.state.pass)
+      }
       this.props.onSubmit()
   }
 
   render() {
     return (
       <MuiThemeProvider>
-        <Paper zDepth={3} style={{ width: '40%'}}>
+        <Paper zDepth={3} style={this.props.style}>
           <TextField
             hintText="Server Name"
             floatingLabelText="Server Name"
