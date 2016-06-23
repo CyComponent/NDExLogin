@@ -43,7 +43,7 @@ export default class CyComponent extends React.Component {
   }
 
   login = () => {
-      this.props.serverActions.setServer(this.state.serverName, this.state.serverAddress),
+      this.props.serverActions.setServer(this.state.serverName, this.state.serverAddress)
       if (this.state.user != "" && this.state.pass != "") {
         this.props.serverActions.login(this.state.user, this.state.pass)
       }
