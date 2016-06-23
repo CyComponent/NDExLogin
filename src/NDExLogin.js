@@ -5,6 +5,8 @@ import NDExLogin from './component/NDExLogin'
 
 import sample, * as sampleActions from './store/sample'
 
+import * as serverActions from './store/server'
+
 require("./style/component.scss")
 
 function mapStateToProps(state) {
@@ -13,7 +15,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    sampleActions: bindActionCreators(sampleActions, dispatch)
+    serverActions: bindActionCreators(serverActions, dispatch)
   }
 }
 

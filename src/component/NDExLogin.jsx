@@ -8,6 +8,10 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme'
 
 export default class CyComponent extends React.Component {
 
+  static defaultProps = {
+    onSubmit: () => {}
+  }
+
   constructor(props) {
     super(props)
     this.state = {
@@ -39,7 +43,8 @@ export default class CyComponent extends React.Component {
       console.log(this.state.serverName),
       console.log(this.state.serverAddress),
       console.log(this.state.user),
-      console.log(this.state.pass)
+      console.log(this.state.pass),
+      this.props.onSubmit()
   }
 
   render() {
