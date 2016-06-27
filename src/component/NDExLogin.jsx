@@ -13,16 +13,22 @@ export default class CyComponent extends React.Component {
       height: '100%',
       width: '100%'
     },
+    defaults: {
+      serverName: "NDEx",
+      serverAddress: "http://public.ndexbio.org",
+      user: "",
+      pass: ""
+    },
     onSubmit: () => {}
   }
 
   constructor(props) {
     super(props)
     this.state = {
-      serverName: "",
-      serverAddress: "",
-      user: "",
-      pass: ""
+      serverName: this.props.defaults.serverName,
+      serverAddress: this.props.defaults.serverAddress,
+      user: this.props.defaults.user,
+      pass: this.props.defaults.pass
     }
   }
 
@@ -58,6 +64,7 @@ export default class CyComponent extends React.Component {
             hintText="Server Name"
             floatingLabelText="Server Name"
             fullWidth={true}
+            value={this.state.serverName}
             onChange={this.updateServerName}
           />
           <br/>
@@ -65,6 +72,7 @@ export default class CyComponent extends React.Component {
             hintText="Server Address"
             floatingLabelText="Server Address"
             fullWidth={true}
+            value={this.state.serverAddress}
             onChange={this.updateServerAddress}
           />
           <br/>
@@ -72,6 +80,7 @@ export default class CyComponent extends React.Component {
             hintText="Username Field"
             floatingLabelText="Username"
             fullWidth={true}
+            value={this.state.user}
             onChange={this.updateUser}
           />
           <br/>
@@ -80,6 +89,7 @@ export default class CyComponent extends React.Component {
             floatingLabelText="Password"
             type="password"
             fullWidth={true}
+            value={this.state.pass}
             onChange={this.updatePass}
           />
           <br/>
