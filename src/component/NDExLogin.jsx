@@ -16,8 +16,8 @@ export default class CyComponent extends React.Component {
     defaults: {
       serverName: "NDEx",
       serverAddress: "http://public.ndexbio.org",
-      user: "",
-      pass: ""
+      userName: "",
+      userPass: ""
     },
     onSubmit: () => {}
   }
@@ -27,8 +27,8 @@ export default class CyComponent extends React.Component {
     this.state = {
       serverName: this.props.defaults.serverName,
       serverAddress: this.props.defaults.serverAddress,
-      user: this.props.defaults.user,
-      pass: this.props.defaults.pass
+      user: this.props.defaults.userName,
+      pass: this.props.defaults.userPass
     }
   }
 
