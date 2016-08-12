@@ -20,25 +20,21 @@
     "test": "eslint src/ && jest",
     "coverage": "jest --coverage"
   },
-  "homepage": "https://github.com/NDExLogin/NDExLogin",
+  "homepage": "https://github.com/CyComponent/NDExLogin",
   "repository": {
     "type": "git",
-    "url": "https://github.com/NDExLogin/NDExLogin.git"
+    "url": "https://github.com/CyComponent/NDExLogin.git"
   },
   "bugs": {
-    "url": "https://github.com/NDExLogin/NDExLogin/issues"
-  },
-  "dependencies": {
-    "immutable": "^3.7.6",
-    "material-ui": "^0.15.1",
-    "react-redux": "^4.4.0",
-    "redux": "^3.3.1"
+    "url": "https://github.com/CyComponent/NDExLogin/issues"
   },
   "peerDependencies": {
     "react": "^15.0.0",
     "react-dom": "^15.0.0"
   },
   "devDependencies": {
+    "immutable": "^3.7.6",
+    "material-ui": "^0.15.1",
     "babel-core": "^6.5.1",
     "babel-eslint": "^4.1.8",
     "babel-jest": "^6.0.1",
@@ -71,5 +67,9 @@
       "es6": true,
       "browser": true
     }
+  },
+  "dependencies": {
+    "react-redux": "^4.4.5",
+    "redux": "^3.5.2"
   }
 }

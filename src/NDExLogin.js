@@ -3,11 +3,9 @@ import { connect } from 'react-redux'
 
 import NDExLogin from './component/NDExLogin'
 
-import sample, * as sampleActions from './store/sample'
-
 import * as serverActions from './store/server'
 
-require("./style/component.scss")
+import './style/component.scss'
 
 function mapStateToProps(state) {
   return {}
@@ -19,17 +17,7 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-const component = connect(
+export default connect(
     mapStateToProps,
     mapDispatchToProps
-  )(NDExLogin)
-
-const storeName = 'login'
-const store = { sample }
-
-export {
-  component,
-  storeName,
-  store,
-  sampleActions
-}
+)(NDExLogin)

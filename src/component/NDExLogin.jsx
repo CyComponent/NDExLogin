@@ -13,6 +13,7 @@ export default class CyComponent extends React.Component {
       height: '100%',
       width: '100%'
     },
+    theme: {},
     defaults: {
       serverName: "NDEx",
       serverAddress: "http://public.ndexbio.org",
@@ -57,8 +58,9 @@ export default class CyComponent extends React.Component {
   }
 
   render() {
+    const theme = getMuiTheme(this.props.theme)
     return (
-      <MuiThemeProvider>
+      <MuiThemeProvider muiTheme={theme}>
         <Paper zDepth={3} style={this.props.style}>
           <TextField
             hintText="Server Name"
