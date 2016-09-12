@@ -6,12 +6,24 @@ import Paper from 'material-ui/Paper'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 
+const FLEX_CONTAINER_ROW = {
+  display: 'flex',
+  'flex-direction': 'row',
+  'justify-content': 'center'
+}
+
 export default class CyComponent extends React.Component {
 
   static defaultProps = {
     style: {
+      display: 'flex',
+      'flex-direction': 'column',
       height: '100%',
-      width: '100%'
+      width: '100%',
+      paddingLeft: '1em',
+      paddingRight: '1em',
+      paddingTop: '0',
+      paddingBottom: '0.1em'
     },
     theme: {},
     defaults: {
@@ -20,7 +32,8 @@ export default class CyComponent extends React.Component {
       userName: "",
       userPass: ""
     },
-    onSubmit: () => {}
+    onSubmit: () => {},
+    onLogout: () => {}
   }
 
   constructor(props) {
@@ -57,6 +70,10 @@ export default class CyComponent extends React.Component {
       this.props.onSubmit()
   }
 
+  logout = () => {
+    this.props.onLogout()
+  }
+
   render() {
     const theme = getMuiTheme(this.props.theme)
     return (
@@ -69,7 +86,6 @@ export default class CyComponent extends React.Component {
             value={this.state.serverName}
             onChange={this.updateServerName}
           />
-          <br/>
           <TextField
             hintText="Server Address"
             floatingLabelText="Server Address"
@@ -77,7 +93,6 @@ export default class CyComponent extends React.Component {
             value={this.state.serverAddress}
             onChange={this.updateServerAddress}
           />
-          <br/>
           <TextField
             hintText="Username Field"
             floatingLabelText="Username"
@@ -85,7 +100,6 @@ export default class CyComponent extends React.Component {
             value={this.state.user}
             onChange={this.updateUser}
           />
-          <br/>
           <TextField
             hintText="Password Field"
             floatingLabelText="Password"
@@ -94,14 +108,19 @@ export default class CyComponent extends React.Component {
             value={this.state.pass}
             onChange={this.updatePass}
           />
-          <br/>
-          <RaisedButton
-            label="Submit"
-            secondary={true}
-            style={{ width: '100%'}}
-            onClick={this.login}
-          />
-          <br/>
+          <div style={FLEX_CONTAINER_ROW}>
+            <RaisedButton
+              label="Logout"
+              style={{width: '50%'}}
+              onClick={this.logout}
+            />
+            <RaisedButton
+              label="Login"
+              secondary={true}
+              style={{width: '50%', marginLeft: '4px'}}
+              onClick={this.login}
+            />
+          </div>
         </Paper>
       </MuiThemeProvider>
     )
