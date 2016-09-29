@@ -27,7 +27,7 @@ export default class CyComponent extends React.Component {
     },
     theme: {},
     defaults: {
-      serverName: "NDEx",
+      serverName: "Puglic NDEx",
       serverAddress: "http://public.ndexbio.org",
       userName: "",
       userPass: ""
@@ -63,10 +63,13 @@ export default class CyComponent extends React.Component {
   }
 
   login = () => {
-      this.props.serverActions.setServer(this.state.serverName, this.state.serverAddress)
-      if (this.state.user != "" && this.state.pass != "") {
-        this.props.serverActions.login(this.state.user, this.state.pass)
-      }
+      this.props.serverActions.add(
+        this.state.serverName,
+        this.state.serverAddress,
+        this.state.user,
+        this.state.pass
+      )
+      this.props.settingActions.setServer(this.state.serverName)
       this.props.onSubmit()
   }
 

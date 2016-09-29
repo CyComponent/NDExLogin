@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import NDExLogin from './component/NDExLogin'
 
-import * as serverActions from './store/server'
+import { serverActions, settingActions } from  'ndex-store'
 
 import './style/component.scss'
 
@@ -13,7 +13,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    serverActions: bindActionCreators(serverActions, dispatch)
+    serverActions: bindActionCreators(serverActions, dispatch),
+    settingActions: bindActionCreators(settingActions, dispatch)
   }
 }
 
