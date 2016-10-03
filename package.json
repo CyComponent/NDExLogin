@@ -33,7 +33,7 @@
     "react-dom": "^15.0.0"
   },
   "devDependencies": {
-    "ndex-store": "^0.0.8",
+    "ndex-store": "^0.0.10",
     "immutable": "^3.7.6",
     "material-ui": "^0.15.1",
     "babel-core": "^6.5.1",
